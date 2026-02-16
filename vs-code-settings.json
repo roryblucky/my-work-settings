@@ -1,0 +1,171 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "files.autoSave": "afterDelay",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.showOnlyDirectDependenciesInAutoImport": true,
+  "notebook.output.textLineLimit": 300,
+  "chat.viewSessions.orientation": "stacked",
+  "security.workspace.trust.untrustedFiles": "open",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.typeEvaluation.deprecateTypingAliases": true,
+  "jupyter.interactiveWindow.textEditor.executeSelection": true,
+  "python.analysis.typeCheckingMode": "standard",
+  "python.testing.pytestEnabled": true,
+  "debugpy.showPythonInlineValues": true,
+  "python.analysis.packageIndexDepths": [
+    {
+      "name": "",
+      "depth": 10,
+      "includeAllSymbols": true
+    },
+  ],
+  "editor.fontFamily": "'JetBrains Mono', 'Apple Color Emoji', monospace",
+  "editor.fontSize": 17,
+  "editor.lineHeight": 1.28,
+  "editor.fontLigatures": false,
+  "editor.fontWeight": "normal",
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 2,
+  "editor.cursorBlinking": "solid",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.padding.top": 24,
+  "terminal.integrated.fontFamily": "'JetBrains Mono', 'Apple Color Emoji', monospace",
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.lineHeight": 1.28,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorWidth": 2,
+  "workbench.colorCustomizations": {
+    "editor.background": "#15141b",
+    "editor.foreground": "#c8c7ca", // 替换原版 #edecee，降低刺眼感
+    "terminal.background": "#15141b",
+    "terminal.foreground": "#c8c7ca", // 替换原版 #edecee
+    "editorCursor.foreground": "#a277ff",
+    "terminalCursor.foreground": "#a277ff",
+    "terminalCursor.background": "#15141b",
+    "editor.selectionBackground": "#29263c",
+    "terminal.selectionBackground": "#29263c",
+    "editor.inactiveSelectionBackground": "#1f1d2880",
+    "editorGroupHeader.tabsBackground": "#15141b",
+    "tab.activeBackground": "#29263c",
+    "tab.activeForeground": "#c8c7ca", // 替换原版 #edecee
+    "tab.inactiveBackground": "#15141b",
+    "tab.inactiveForeground": "#6b6b6b",
+    "tab.hoverBackground": "#1f1d28",
+    "tab.hoverForeground": "#9b9b9b",
+    "tab.border": "#3d3a4f",
+    "editorGroup.border": "#3d3a4f",
+    "sideBar.background": "#110f18",
+    "sideBar.border": "#3d3a4f",
+    "activityBar.background": "#110f18",
+    "editorLineNumber.foreground": "#4d4d4d",
+    "editorLineNumber.activeForeground": "#c8c7ca",
+    "terminal.ansiBlack": "#110f18",
+    "terminal.ansiRed": "#ff6767",
+    "terminal.ansiGreen": "#61ffca",
+    "terminal.ansiYellow": "#ffca85",
+    "terminal.ansiBlue": "#a277ff",
+    "terminal.ansiMagenta": "#a277ff",
+    "terminal.ansiCyan": "#61ffca",
+    "terminal.ansiWhite": "#c8c7ca", // 替换原版 #edecee
+    "terminal.ansiBrightBlack": "#4d4d4d",
+    "terminal.ansiBrightRed": "#ff6767",
+    "terminal.ansiBrightGreen": "#61ffca",
+    "terminal.ansiBrightYellow": "#ffca85",
+    "terminal.ansiBrightBlue": "#a277ff",
+    "terminal.ansiBrightMagenta": "#a277ff",
+    "terminal.ansiBrightCyan": "#61ffca",
+    "terminal.ansiBrightWhite": "#c8c7ca" // 替换原版 #edecee
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "punctuation.definition.comment"
+        ],
+        "settings": {
+          "foreground": "#4d4d4d",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          "keyword",
+          "storage.type",
+          "storage.modifier",
+          "variable.language"
+        ],
+        "settings": {
+          "foreground": "#a277ff"
+        }
+      },
+      {
+        "scope": [
+          "string",
+          "markup.inline.raw",
+          "regex"
+        ],
+        "settings": {
+          "foreground": "#61ffca"
+        }
+      },
+      {
+        "scope": [
+          "entity.name.function",
+          "support.function",
+          "entity.name.tag"
+        ],
+        "settings": {
+          "foreground": "#ffca85"
+        }
+      },
+      {
+        "scope": [
+          "constant.numeric",
+          "constant.language",
+          "support.constant"
+        ],
+        "settings": {
+          "foreground": "#ff6767"
+        }
+      },
+      {
+        "scope": [
+          "entity.name.type",
+          "entity.name.class",
+          "support.type.primitive"
+        ],
+        "settings": {
+          "foreground": "#a277ff"
+        }
+      },
+      {
+        "scope": [
+          "variable",
+          "variable.other",
+          "variable.parameter",
+          "punctuation"
+        ],
+        "settings": {
+          "foreground": "#c8c7ca" // 替换原版 #edecee
+        }
+      },
+      {
+        "scope": [
+          "support.type.property-name",
+          "meta.object-literal.key"
+        ],
+        "settings": {
+          "foreground": "#61ffca"
+        }
+      }
+    ]
+  },
+  "workbench.colorTheme": "Experimental Dark"
+}
