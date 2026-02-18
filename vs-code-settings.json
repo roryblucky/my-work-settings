@@ -1,4 +1,8 @@
 {
+  // ==========================================
+  // 1. 基础环境与 Python 开发配置 (保留你原有的设置)
+  // ==========================================
+  "workbench.colorTheme": "GitHub Dark Dimmed", // 或者填 "Dark+ (default dark)"
   "workbench.iconTheme": "material-icon-theme",
   "files.autoSave": "afterDelay",
   "editor.formatOnSave": true,
@@ -22,49 +26,72 @@
       "name": "",
       "depth": 10,
       "includeAllSymbols": true
-    },
+    }
   ],
+  // ==========================================
+  // 2. 字体与排版 (Kaku Font Style)
+  // ==========================================
   "editor.fontFamily": "'JetBrains Mono', 'Apple Color Emoji', monospace",
   "editor.fontSize": 17,
   "editor.lineHeight": 1.28,
   "editor.fontLigatures": false,
   "editor.fontWeight": "normal",
+  "editor.wordSeparators": " \t\n{}[]()\"'-",
+  // ==========================================
+  // 3. 光标与视图体验 (UI Layout)
+  // ==========================================
   "editor.cursorStyle": "line",
   "editor.cursorWidth": 2,
   "editor.cursorBlinking": "solid",
   "editor.scrollbar.vertical": "hidden",
   "editor.padding.top": 24,
+  // ==========================================
+  // 4. 终端设置 (Terminal Font)
+  // ==========================================
   "terminal.integrated.fontFamily": "'JetBrains Mono', 'Apple Color Emoji', monospace",
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.lineHeight": 1.28,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorWidth": 2,
+  // ==========================================
+  // 5. 关键修复：关闭语义高亮
+  // (防止 Python 插件或 Tokyo Night 覆盖自定义颜色)
+  // ==========================================
+  "editor.semanticHighlighting.enabled": false,
+  // ==========================================
+  // 6. Kaku UI 界面与终端色板 (护眼版白色 + 原版彩色)
+  // ==========================================
   "workbench.colorCustomizations": {
     "editor.background": "#15141b",
-    "editor.foreground": "#c8c7ca", // 替换原版 #edecee，降低刺眼感
+    "editor.foreground": "#c8c7ca", // 护眼灰白 (替换原版刺眼的 #edecee)
     "terminal.background": "#15141b",
-    "terminal.foreground": "#c8c7ca", // 替换原版 #edecee
+    "terminal.foreground": "#c8c7ca",
+    // 光标与选中区域
     "editorCursor.foreground": "#a277ff",
     "terminalCursor.foreground": "#a277ff",
     "terminalCursor.background": "#15141b",
     "editor.selectionBackground": "#29263c",
     "terminal.selectionBackground": "#29263c",
-    "editor.inactiveSelectionBackground": "#1f1d2880",
+    "editor.inactiveSelectionBackground": "#1f1d2880", // 增加透明度消除警告
+    // 标签页 (Tab Bar)
     "editorGroupHeader.tabsBackground": "#15141b",
     "tab.activeBackground": "#29263c",
-    "tab.activeForeground": "#c8c7ca", // 替换原版 #edecee
+    "tab.activeForeground": "#c8c7ca",
     "tab.inactiveBackground": "#15141b",
     "tab.inactiveForeground": "#6b6b6b",
     "tab.hoverBackground": "#1f1d28",
     "tab.hoverForeground": "#9b9b9b",
     "tab.border": "#3d3a4f",
+    // 分屏边框与侧边栏
     "editorGroup.border": "#3d3a4f",
     "sideBar.background": "#110f18",
     "sideBar.border": "#3d3a4f",
     "activityBar.background": "#110f18",
+    // 代码行号
     "editorLineNumber.foreground": "#4d4d4d",
     "editorLineNumber.activeForeground": "#c8c7ca",
+    // 终端 ANSI 颜色 (保留原版高亮，仅调整白色)
     "terminal.ansiBlack": "#110f18",
     "terminal.ansiRed": "#ff6767",
     "terminal.ansiGreen": "#61ffca",
@@ -72,7 +99,7 @@
     "terminal.ansiBlue": "#a277ff",
     "terminal.ansiMagenta": "#a277ff",
     "terminal.ansiCyan": "#61ffca",
-    "terminal.ansiWhite": "#c8c7ca", // 替换原版 #edecee
+    "terminal.ansiWhite": "#c8c7ca", // 护眼灰白
     "terminal.ansiBrightBlack": "#4d4d4d",
     "terminal.ansiBrightRed": "#ff6767",
     "terminal.ansiBrightGreen": "#61ffca",
@@ -80,10 +107,14 @@
     "terminal.ansiBrightBlue": "#a277ff",
     "terminal.ansiBrightMagenta": "#a277ff",
     "terminal.ansiBrightCyan": "#61ffca",
-    "terminal.ansiBrightWhite": "#c8c7ca" // 替换原版 #edecee
+    "terminal.ansiBrightWhite": "#c8c7ca" // 护眼灰白
   },
+  // ==========================================
+  // 7. Kaku 通用语法高亮 (适用于 Python/JS/Go/Java 等所有语言)
+  // ==========================================
   "editor.tokenColorCustomizations": {
     "textMateRules": [
+      // 1. 注释
       {
         "scope": [
           "comment",
@@ -94,52 +125,117 @@
           "fontStyle": "italic"
         }
       },
+      // 2. 关键字 (try, catch, return, class, def, async)
       {
         "scope": [
           "keyword",
+          "keyword.control",
+          "storage",
           "storage.type",
-          "storage.modifier",
-          "variable.language"
+          "storage.modifier"
         ],
         "settings": {
           "foreground": "#a277ff"
-        }
+        } // 魅紫
       },
+      // 3. 字符串 (包括 TS 的反引号和 Python 的三引号)
       {
         "scope": [
           "string",
+          "string.quoted",
           "markup.inline.raw",
           "regex"
         ],
         "settings": {
           "foreground": "#61ffca"
-        }
+        } // 青绿
       },
+      // 4. 函数调用与定义 (如 formatJson, add)
       {
         "scope": [
           "entity.name.function",
           "support.function",
-          "entity.name.tag"
+          "meta.function-call",
+          "meta.function-call.generic"
         ],
         "settings": {
           "foreground": "#ffca85"
-        }
+        } // 暖黄
       },
-      {
-        "scope": [
-          "constant.numeric",
-          "constant.language",
-          "support.constant"
-        ],
-        "settings": {
-          "foreground": "#ff6767"
-        }
-      },
+      // 5. 类名与类型 (精准击杀 Python 的 str/dict/Any 和 TS 的 JSON 对象)
       {
         "scope": [
           "entity.name.type",
           "entity.name.class",
-          "support.type.primitive"
+          "entity.other.inherited-class",
+          "support.type",
+          "support.class",
+          "support.class.builtin", // 解决 TS 里的 JSON 发青问题
+          "support.type.python", // 解决 Python 里的 str/dict 发青问题
+          "support.class.python"
+        ],
+        "settings": {
+          "foreground": "#a277ff",
+          "fontStyle": "italic"
+        } // 魅紫
+      },
+      // 6. 语言专属特殊变量 (精准击杀 self 发白的问题)
+      {
+        "scope": [
+          "variable.language",
+          "variable.language.special.self.python",
+          "variable.parameter.function.language.special.self.python",
+          "variable.language.this"
+        ],
+        "settings": {
+          "foreground": "#ff6767",
+          "fontStyle": "italic"
+        } // 柔红
+      },
+      // 7. 常量与布尔值 (精准击杀 None 发青、null 发蓝的问题)
+      {
+        "scope": [
+          "constant",
+          "constant.numeric",
+          "constant.language",
+          "constant.language.python", // 解决 None
+          "constant.language.null", // 解决 TS 的 null
+          "constant.language.boolean"
+        ],
+        "settings": {
+          "foreground": "#ff6767"
+        } // 柔红
+      },
+      // 8. 对象属性与 JSON Key
+      {
+        "scope": [
+          "variable.other.property",
+          "meta.object-literal.key",
+          "support.type.property-name"
+        ],
+        "settings": {
+          "foreground": "#ffca85"
+        } // 暖黄
+      },
+      // 9. 普通变量兜底 (精准击杀 content, originalValue 发蓝的问题)
+      {
+        "scope": [
+          "variable",
+          "variable.other",
+          "variable.other.readwrite",
+          "variable.parameter", // 强行把函数参数拉回灰白色
+          "punctuation",
+          "meta.brace",
+          "meta.delimiter"
+        ],
+        "settings": {
+          "foreground": "#c8c7ca"
+        } // 护眼灰白
+      },
+      // 10. 前端 HTML/JSX 标签
+      {
+        "scope": [
+          "entity.name.tag"
         ],
         "settings": {
           "foreground": "#a277ff"
@@ -147,25 +243,12 @@
       },
       {
         "scope": [
-          "variable",
-          "variable.other",
-          "variable.parameter",
-          "punctuation"
+          "entity.other.attribute-name"
         ],
         "settings": {
-          "foreground": "#c8c7ca" // 替换原版 #edecee
-        }
-      },
-      {
-        "scope": [
-          "support.type.property-name",
-          "meta.object-literal.key"
-        ],
-        "settings": {
-          "foreground": "#61ffca"
+          "foreground": "#ffca85"
         }
       }
     ]
-  },
-  "workbench.colorTheme": "Experimental Dark"
+  }
 }
